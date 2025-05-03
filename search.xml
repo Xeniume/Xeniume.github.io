@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Moe of Cyrene</title>
+    <url>/p/afaceb0f/</url>
+    <content><![CDATA[<h2 id="前情提要"><a class="header-anchor" href="#前情提要"></a>前情提要</h2>
+<p>上回说到，对你蝶爱得深沉的我，脸滚键盘 <a href="https://castorice.moe/">Castorice.Moe</a>。</p>
+<p>什么？你不知道这是什么？自己多戳几次就知道了。</p>
+<p>这可真是太有乐子了！「我也要搞一个！（星星眼）」</p>
+<span id="more"></span>
+<h2 id="让我康康"><a class="header-anchor" href="#让我康康"></a>让我康康</h2>
+<p>手玩一下：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">❯ curl -I https://castorice.moe/</span><br><span class="line">HTTP/2 303 </span><br><span class="line">date: ...</span><br><span class="line">location: https://www.youtube.com/watch?v=_Bt9UA354uo</span><br><span class="line">server: cloudflare</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>其中，<code>location</code> 字段不是恒定的，但其重定向至的页面都是你蝶的。上面留下来只是因为那刚好是你蝶 PV。</p>
+<h2 id="启动！"><a class="header-anchor" href="#启动！"></a>启动！</h2>
+<p>先搞域名。虽然我也对你蝶爱得深沉，但域名已经被佬哥捷足先登了，咱换个别的——</p>
+<p>就是你啦，「<a href="https://honkai-star-rail.fandom.com/wiki/Cyrene">昔涟 Cyrene</a>」！</p>
+<p>咱身为老舰长（也不是那么老），就算上了泥头车，也是对爱莉有感情的。拿下 <a href="https://cyrene.moe/">Cyrene.Moe</a>。</p>
+<hr>
+<p>感觉写个 CF Worker 就可以搞定这些功能嘛。（只要没有某些唐人一直刷，Free plan 绝对够我发电了。）</p>
+<p>维护一个 URL 集，每次请求就 randomly choose 一个元素，然后甩一个 303 回去。</p>
+]]></content>
+      <tags>
+        <tag>Honkai: Star Rail</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Weekly #15~18</title>
+    <url>/p/6fb17c92/</url>
+    <content><![CDATA[<h2 id="并非坠机"><a class="header-anchor" href="#并非坠机"></a>并非坠机</h2>
+<p>许久未见！</p>
+<span id="more"></span>
+<p>近来是迷茫的，不知道每天在干什么，不知道每天要干什么。</p>
+<p>味觉，嗅觉，基本上没有了。只有喝小甜水儿时能尝出味。</p>
+<p>没给整死就对了，我还能接着整活！</p>
+<h2 id="究极厨力"><a class="header-anchor" href="#究极厨力"></a>究极厨力</h2>
+<p>因为对「<a href="https://honkai-star-rail.fandom.com/wiki/Castorice">遐蝶 Castorice</a>」爱得深沉，所以去 address bar 里面脸滚 <a href="https://castorice.moe/">Castorice.Moe</a>。</p>
+<p>还真出货了！（「原来你也……！」）</p>
+<p>这货会随机重定向到一个你蝶相关的页面，然后就是你的事情了。</p>
+<p>好玩，<a href="/p/afaceb0f/">我也要玩</a>！</p>
+<h2 id="確有问题"><a class="header-anchor" href="#確有问题"></a>確有问题</h2>
+<p>本来想去看「星铁 LIVE 2025」的，结果第一轮开票时忘了这茬，这下这下了。属实遗憾呐。</p>
+]]></content>
+      <categories>
+        <category>Essays | 随笔</category>
+        <category>Weeklies | 周报</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Weekly #14</title>
     <url>/p/49286e73/</url>
     <content><![CDATA[<h2 id="0x0-前面忘了"><a class="header-anchor" href="#0x0-前面忘了"></a>0x0. 前面忘了</h2>
