@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Bak in &#39;89 #1</title>
+    <url>/p/7607ac1a/</url>
+    <content><![CDATA[<h2 id="天坑的开"><a class="header-anchor" href="#天坑的开"></a>天坑的开</h2>
+<p>一个人（哦当然这一个人指我）开始写所谓「追忆」，说明，什么也说明不了。</p>
+<p>我于昨天下午跑走马灯，灵光乍现，忽然想写些甚么。</p>
+<p>然后，我去吃晚饭了。</p>
+<span id="more"></span>
+<h2 id="厚土的埋"><a class="header-anchor" href="#厚土的埋"></a>厚土的埋</h2>
+<p>抹完嘴角的油，<code>new post</code> 之后，我却是只能对着黑洞洞的 Editor 发呆了——我淡忘了所欲写的。</p>
+<p>今天，现在，距我创建这篇已过去近乎三十小时了。</p>
+<p>我仍是回想不出。</p>
+<p>阿，缪斯，可否再度？</p>
+<h2 id="Anything-Else"><a class="header-anchor" href="#Anything-Else"></a>Anything Else</h2>
+<p>伙计，不知道你看到 Title 会怎么想。但是我敢打赌，你多半该死地违♂背↗了作者原意。</p>
+<p><s>晶哥，俺是大大滴良民阿！</s></p>
+<p>其实是 Neta 了这个：</p>
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/085Zdnq8OwSpGrjQUwARva?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+<p>We were back in '89~</p>
+<hr>
+<p>我确是抑郁了罢。</p>
+]]></content>
+      <categories>
+        <category>Essays | 随笔</category>
+        <category>Reminiscence | 追忆</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Weekly #19~23</title>
     <url>/p/99984961/</url>
     <content><![CDATA[<h2 id="今日无闻"><a class="header-anchor" href="#今日无闻"></a>今日无闻</h2>
@@ -35,6 +62,9 @@
 <p>感觉写个 CF Worker 就可以搞定这些功能嘛。（只要没有某些唐人一直刷，Free plan 绝对够我发电了。）</p>
 <p>维护一个 URL 集，每次请求就 randomly choose 一个元素，然后甩一个 303 回去。</p>
 ]]></content>
+      <categories>
+        <category>Just 4 Fun | 整活</category>
+      </categories>
       <tags>
         <tag>Honkai: Star Rail</tag>
       </tags>
@@ -205,7 +235,7 @@
 <s>缘来是这样：当周，我给机子（姬子）补电时，那插头，还没怼进洞里，只见，一道甚至两道「DATA DELETED（其实是我编不出来了，但一定是一种颜色）」光在我逝去意识前闪过！醒来后，就已经到「（是的，我又词穷力」内了。</s><br>
 好吧，咕咕，鸽鸽，不需理由。</p>
 <span id="more"></span>
-<h2 id="Anything-else"><a class="header-anchor" href="#Anything-else"></a>Anything else</h2>
+<h2 id="Anything-Else"><a class="header-anchor" href="#Anything-Else"></a>Anything Else</h2>
 <p>累，困，疲，冷，乏, 颤。<br>
 人弱而荏弱啊。</p>
 ]]></content>
@@ -300,7 +330,7 @@ e \pi^9 + e \pi^8 + e \pi^7 - e \pi^5 + e \pi^4 + e \pi^3 - e \pi^2 - e \pi + e^
 <p>感觉要发恶疾力！（喜</p>
 <hr>
 <p>把 HOYO-MiX &amp; Sān-Z 新专<a href="https://open.spotify.com/album/74Y0dW8JxYd5lvohIVLv8x">极限委托</a>翻来覆去听了五六遍。198 首曲子，还是有许多（每一首都）值得一听的。<br>
-来看看含量：Dubstep，DNB，R &amp; B 偏多，出金の小曲偏 Trap，部分战斗主题是 HDM。</p>
+来看看含量：出金の小曲偏 Trap，战斗主题偏 Harder 和 Dub，有少数不错的 Synth。</p>
 <p>还有这个，<a href="https://open.spotify.com/album/3t95BQqIrNzbdulnvykloZ">极限委托：PV原声集 (游戏《绝区零》原声集)</a>。我们的朱鸢探长真是英勇无双！</p>
 ]]></content>
       <categories>
@@ -355,7 +385,7 @@ Live Long and Prosper!
 所以，以后有什么闲话，我就在这里咕啦！</p>
 ]]></content>
       <categories>
-        <category>Announcement | 公告</category>
+        <category>Announcements | 公告</category>
       </categories>
       <tags>
         <tag>Finale</tag>
@@ -384,13 +414,13 @@ Live Long and Prosper!
 </li>
 </ul>
 <h2 id="0x3-问题分析"><a class="header-anchor" href="#0x3-问题分析"></a>0x3. 问题分析</h2>
-<p>问题主因，即为了向下兼容，Clash Verge Rev 的下游 <a href="https://github.com/tauri-apps/tauri">Tauri</a> 使用了 webkit2gtk 4.0，而 Ubuntu 24.04 LTS 的默认 apt 源中将其移除，转而包含 webkit2gtk 4.1。</p>
+<p>问题主因，即为了向下兼容，Clash Verge Rev 的上游 <a href="https://github.com/tauri-apps/tauri">Tauri</a> 使用了 webkit2gtk 4.0，而 Ubuntu 24.04 LTS 的默认 apt 源中将其移除，转而包含 webkit2gtk 4.1。</p>
 ]]></content>
       <categories>
         <category>Software Installing | 软件安装</category>
       </categories>
       <tags>
-        <tag>Ubuntu 24.04 LTS</tag>
+        <tag>Ubuntu</tag>
         <tag>webkit2gtk</tag>
       </tags>
   </entry>
@@ -426,7 +456,7 @@ Live Long and Prosper!
 </ol>
 ]]></content>
       <categories>
-        <category>Optimization | 配置调优</category>
+        <category>Optimisation | 配置调优</category>
       </categories>
       <tags>
         <tag>Hexo</tag>
