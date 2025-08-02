@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.xeniu.me/p/c595222e/</loc>
+    
+    <lastmod>2025-08-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.xeniu.me/p/2b3f2f75/</loc>
     
     <lastmod>2025-07-04</lastmod>
@@ -220,7 +229,7 @@
 
   <url>
     <loc>https://blog.xeniu.me/</loc>
-    <lastmod>2025-07-04</lastmod>
+    <lastmod>2025-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -228,56 +237,56 @@
   
   <url>
     <loc>https://blog.xeniu.me/tags/Finale/</loc>
-    <lastmod>2025-07-04</lastmod>
+    <lastmod>2025-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xeniu.me/tags/Hexo/</loc>
-    <lastmod>2025-07-04</lastmod>
+    <lastmod>2025-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xeniu.me/tags/NexT/</loc>
-    <lastmod>2025-07-04</lastmod>
+    <lastmod>2025-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xeniu.me/tags/Honkai-Star-Rail/</loc>
-    <lastmod>2025-07-04</lastmod>
+    <lastmod>2025-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xeniu.me/tags/Ubuntu/</loc>
-    <lastmod>2025-07-04</lastmod>
+    <lastmod>2025-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xeniu.me/tags/webkit2gtk/</loc>
-    <lastmod>2025-07-04</lastmod>
+    <lastmod>2025-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xeniu.me/tags/Arch-Linux/</loc>
-    <lastmod>2025-07-04</lastmod>
+    <lastmod>2025-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xeniu.me/tags/Hyprland/</loc>
-    <lastmod>2025-07-04</lastmod>
+    <lastmod>2025-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -286,49 +295,49 @@
   
   <url>
     <loc>https://blog.xeniu.me/categories/Essays-%E9%9A%8F%E7%AC%94/</loc>
-    <lastmod>2025-07-04</lastmod>
+    <lastmod>2025-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xeniu.me/categories/Announcements-%E5%85%AC%E5%91%8A/</loc>
-    <lastmod>2025-07-04</lastmod>
+    <lastmod>2025-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xeniu.me/categories/Optimisation-%E9%85%8D%E7%BD%AE%E8%B0%83%E4%BC%98/</loc>
-    <lastmod>2025-07-04</lastmod>
+    <lastmod>2025-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xeniu.me/categories/Just-4-Fun-%E6%95%B4%E6%B4%BB/</loc>
-    <lastmod>2025-07-04</lastmod>
+    <lastmod>2025-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xeniu.me/categories/Software-Installing-%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/</loc>
-    <lastmod>2025-07-04</lastmod>
+    <lastmod>2025-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xeniu.me/categories/Essays-%E9%9A%8F%E7%AC%94/Reminiscence-%E8%BF%BD%E5%BF%86/</loc>
-    <lastmod>2025-07-04</lastmod>
+    <lastmod>2025-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xeniu.me/categories/Essays-%E9%9A%8F%E7%AC%94/Weeklies-%E5%91%A8%E6%8A%A5/</loc>
-    <lastmod>2025-07-04</lastmod>
+    <lastmod>2025-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
