@@ -83,13 +83,6 @@
 
   
   <url>
-    <loc>https://blog.xeniu.me/tags/Honkai-Star-Rail/</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.xeniu.me/tags/Nix/</loc>
     <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -98,6 +91,13 @@
   
   <url>
     <loc>https://blog.xeniu.me/tags/pipx/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xeniu.me/tags/Honkai-Star-Rail/</loc>
     <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -127,14 +127,14 @@
   </url>
   
   <url>
-    <loc>https://blog.xeniu.me/categories/Tech-%E6%8A%80%E6%9C%AF/Just-4-Fun-%E6%95%B4%E6%B4%BB/</loc>
+    <loc>https://blog.xeniu.me/categories/Tech-%E6%8A%80%E6%9C%AF/Troubleshooting-%E4%BF%AE%E9%94%85/</loc>
     <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.xeniu.me/categories/Tech-%E6%8A%80%E6%9C%AF/Troubleshooting-%E4%BF%AE%E9%94%85/</loc>
+    <loc>https://blog.xeniu.me/categories/Tech-%E6%8A%80%E6%9C%AF/Just-4-Fun-%E6%95%B4%E6%B4%BB/</loc>
     <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

@@ -7,11 +7,11 @@ https://blog.xeniu.me/tags/
 https://blog.xeniu.me/categories/
 https://blog.xeniu.me/lib/pace/README
 https://blog.xeniu.me/
-https://blog.xeniu.me/tags/Honkai-Star-Rail/
 https://blog.xeniu.me/tags/Nix/
 https://blog.xeniu.me/tags/pipx/
+https://blog.xeniu.me/tags/Honkai-Star-Rail/
 https://blog.xeniu.me/tags/Ubuntu/
 https://blog.xeniu.me/tags/webkit2gtk/
 https://blog.xeniu.me/categories/Tech-%E6%8A%80%E6%9C%AF/
-https://blog.xeniu.me/categories/Tech-%E6%8A%80%E6%9C%AF/Just-4-Fun-%E6%95%B4%E6%B4%BB/
 https://blog.xeniu.me/categories/Tech-%E6%8A%80%E6%9C%AF/Troubleshooting-%E4%BF%AE%E9%94%85/
+https://blog.xeniu.me/categories/Tech-%E6%8A%80%E6%9C%AF/Just-4-Fun-%E6%95%B4%E6%B4%BB/
