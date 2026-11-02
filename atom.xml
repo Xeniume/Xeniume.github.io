@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <author>
+    <name>Xeniume</name>
+  </author>
+  <generator uri="https://hexo.io/">Hexo</generator>
+  <icon>https://blog.xeniu.me/uploads/images/public/avatar.jpg</icon>
+  <id>https://blog.xeniu.me/</id>
+  <link href="https://blog.xeniu.me/" rel="alternate"/>
+  <link href="https://blog.xeniu.me/atom.xml" rel="self"/>
+  <rights>All rights reserved 2026, Xeniume</rights>
+  <subtitle>心向往之，便是佳园。</subtitle>
+  <title>螘穴</title>
+  <updated>2026-10-07T05:05:02.265Z</updated>
+  <entry>
+    <author>
+      <name>Xeniume</name>
+    </author>
+    <category term="Tech | 技术" scheme="https://blog.xeniu.me/categories/Tech-%E6%8A%80%E6%9C%AF/"/>
+    <category term="Troubleshooting | 修锅" scheme="https://blog.xeniu.me/categories/Tech-%E6%8A%80%E6%9C%AF/Troubleshooting-%E4%BF%AE%E9%94%85/"/>
+    <category term="Nix" scheme="https://blog.xeniu.me/tags/Nix/"/>
+    <category term="pipx" scheme="https://blog.xeniu.me/tags/pipx/"/>
+    <content>
+      <![CDATA[<h2 id="0x0-前言"><a class="header-anchor" href="#0x0-前言"></a>0x0. 前言</h2><p>旧 MBP 2018 上搞了个 NixOS，用着很爽，但只是个玩具。<br>现有一台 MBP 2019，装了 nix-darwin，以为会很爽，但是吃了许多坑：</p><ul class="lvl-0"><li class="lvl-2"><p>各种 Nix runtime 的 installer 不支持 <code>x86_64-darwin</code>；</p></li><li class="lvl-2"><p><code>evaluation warning: Nixpkgs 26.05 will be the last release to support x86_64-darwin</code>。</p></li></ul><p>五月份的时候 <a href="https://github.com/nixos/nixpkgs/issues/522307">pipx 还没法 build 了</a>，虽然在 Unstable 里面已经修了这个锅，但是我是低贱的 26.05 用户。</p><p>这里记一下我如何修锅。</p><span id="more"></span><h2 id="0x1-补锅"><a class="header-anchor" href="#0x1-补锅"></a>0x1. 补锅</h2><details class="note danger"><summary><p>锅的样子</p></summary><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">evaluation warning: Nixpkgs 26.05 will be the last release to support x86_64-darwin; see https://nixos.org/manual/nixpkgs/unstable/release-notes#x86_64-darwin-26.05</span><br><span class="line">error: Cannot build &#x27;/nix/store/hsla5dwwa4hgy6m29b6crm3f9kxpl0zj-python3.13-pipx-1.8.0.drv&#x27;.</span><br><span class="line">       Reason: builder failed with exit code 1.</span><br><span class="line">       Output paths:</span><br><span class="line">         /nix/store/0vmvrb9phq8nh2zji0w485i1j6vfagxs-python3.13-pipx-1.8.0</span><br><span class="line">         /nix/store/wny7vj9qb6if9sxf2hjp7g3bwy9naq27-python3.13-pipx-1.8.0-dist</span><br><span class="line">       Last 25 log lines:</span><br><span class="line">       &gt; E             - my-project[cli]@ git+ssh://git@bitbucket.org/my-company/myproject.git</span><br><span class="line">       &gt; E             + my-project[cli] @ git+ssh://git@bitbucket.org/my-company/myproject.git</span><br><span class="line">       &gt; E             ?                +</span><br><span class="line">       &gt;</span><br><span class="line">       &gt; tests/test_package_specifier.py:118: AssertionError</span><br><span class="line">       &gt; ----------------------------- Captured stderr call -----------------------------</span><br><span class="line">       &gt; pipx &gt;(_parsed_package_to_package_or_url:119): ⚠️  Ignoring environment markers (python_version &lt; &quot;3.8&quot;) in package</span><br><span class="line">       &gt;     specification. Use pipx options to specify this type of information.</span><br><span class="line">       &gt; pipx &gt;(_parsed_package_to_package_or_url:139): cleaned package spec: my-project[cli] @ git+ssh://git@bitbucket.org/my-company/myproject.git</span><br><span class="line">       &gt; ------------------------------ Captured log call -------------------------------</span><br><span class="line">       &gt; WARNING  pipx.package_specifier:package_specifier.py:119 ⚠️  Ignoring environment markers (python_version &lt; &quot;3.8&quot;) in package</span><br><span class="line">       &gt;     specification. Use pipx options to specify this type of information.</span><br><span class="line">       &gt; INFO     pipx.package_specifier:package_specifier.py:139 cleaned package spec: my-project[cli] @ git+ssh://git@bitbucket.org/my-company/myproject.git</span><br><span class="line">       &gt; =========================== short test summary info ============================</span><br><span class="line">       &gt; SKIPPED [2] tests/test_interpreter.py:23: Looks for Python.exe</span><br><span class="line">       &gt; SKIPPED [2] tests/test_interpreter.py:41: Looks for Python.exe</span><br><span class="line">       &gt; SKIPPED [2] tests/test_interpreter.py:59: Looks for Python.exe</span><br><span class="line">       &gt; FAILED tests/test_package_specifier.py::test_fix_package_name[nox@https://github.com/ambv/black/archive/18.9b0.zip-black-black@ https://github.com/ambv/black/archive/18.9b0.zip] - AssertionError: assert &#x27;black @ http...ve/18.9b0.zip&#x27; == &#x27;black@ https...ve...</span><br><span class="line">       &gt; FAILED tests/test_package_specifier.py::test_fix_package_name[nox[extra]@https://github.com/ambv/black/archive/18.9b0.zip-black-black[extra]@ https://github.com/ambv/black/archive/18.9b0.zip] - AssertionError: assert &#x27;black[extra]...ve/18.9b0.zip&#x27; == &#x27;black[extra]...ve...</span><br><span class="line">       &gt; FAILED tests/test_package_specifier.py::test_parse_specifier_for_metadata[nox@git+https://github.com/cs01/nox.git@5ea70723e9e6-nox@ git+https://github.com/cs01/nox.git@5ea70723e9e6-True] - AssertionError: assert &#x27;nox @ git+ht...@5ea70723e9e6&#x27; == &#x27;nox@ git+htt...@5...</span><br><span class="line">       &gt; FAILED tests/test_package_specifier.py::test_parse_specifier_for_metadata[black@https://github.com/ambv/black/archive/18.9b0.zip-black@ https://github.com/ambv/black/archive/18.9b0.zip-True] - AssertionError: assert &#x27;black @ http...ve/18.9b0.zip&#x27; == &#x27;black@ https...ve...</span><br><span class="line">       &gt; FAILED tests/test_package_specifier.py::test_parse_specifier_for_metadata[black @ https://github.com/ambv/black/archive/18.9b0.zip-black@ https://github.com/ambv/black/archive/18.9b0.zip-True] - AssertionError: assert &#x27;black @ http...ve/18.9b0.zip&#x27; == &#x27;black@ https...ve...</span><br><span class="line">       &gt; FAILED tests/test_package_specifier.py::test_parse_specifier_for_metadata[black[extra] @ https://github.com/ambv/black/archive/18.9b0.zip-black[extra]@ https://github.com/ambv/black/archive/18.9b0.zip-True] - AssertionError: assert &#x27;black[extra]...ve/18.9b0.zip&#x27; == &#x27;black[extra]...ve...</span><br><span class="line">       &gt; FAILED tests/test_package_specifier.py::test_parse_specifier_for_metadata[my-project[cli] @ git+ssh://git@bitbucket.org/my-company/myproject.git ; python_version&lt;&quot;3.8&quot;-my-project[cli]@ git+ssh://git@bitbucket.org/my-company/myproject.git-True] - AssertionError: assert &#x27;my-project[c...myproject.git&#x27; == &#x27;my-project[c...my...</span><br><span class="line">       &gt; =========== 7 failed, 78 passed, 6 skipped, 265 deselected in 14.11s ===========</span><br><span class="line">       For full logs, run:</span><br><span class="line">         nix log /nix/store/hsla5dwwa4hgy6m29b6crm3f9kxpl0zj-python3.13-pipx-1.8.0.drv</span><br></pre></td></tr></table></figure></details><p>发现是 <code>test_fix_package_name</code> 和 <code>test_parse_specifier_for_metadata</code> 这两个 tests failed，于是：</p><figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="params">final:</span> <span class="params">prev:</span> &#123;</span><br><span class="line">  <span class="attr">pipx</span> <span class="operator">=</span> prev.pipx.overridePythonAttrs (<span class="params">oldAttrs:</span> &#123;</span><br><span class="line">    <span class="attr">disabledTests</span> <span class="operator">=</span></span><br><span class="line">      (oldAttrs.disabledTests <span class="keyword">or</span> [])</span><br><span class="line">      <span class="operator">++</span> [</span><br><span class="line">        <span class="string">&quot;test_fix_package_name&quot;</span></span><br><span class="line">        <span class="string">&quot;test_parse_specifier_for_metadata&quot;</span></span><br><span class="line">      ];</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>然后 rebuild 就好了。</p><p>草台班子。</p>]]>
+    </content>
+    <id>https://blog.xeniu.me/p/5dc9bdcf/</id>
+    <link href="https://blog.xeniu.me/p/5dc9bdcf/"/>
+    <published>2026-09-18T10:07:25.000Z</published>
+    <summary>
+      <![CDATA[<h2 id="0x0-前言"><a class="header-anchor" href="#0x0-前言"></a>0x0. 前言</h2>
+<p>旧 MBP 2018 上搞了个 NixOS，用着很爽，但只是个玩具。<br>
+现有一台 MBP 2019，装了 nix-darwin，以为会很爽，但是吃了许多坑：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>各种 Nix runtime 的 installer 不支持 <code>x86_64-darwin</code>；</p>
+</li>
+<li class="lvl-2">
+<p><code>evaluation warning: Nixpkgs 26.05 will be the last release to support x86_64-darwin</code>。</p>
+</li>
+</ul>
+<p>五月份的时候 <a href="https://github.com/nixos/nixpkgs/issues/522307">pipx 还没法 build 了</a>，虽然在 Unstable 里面已经修了这个锅，但是我是低贱的 26.05 用户。</p>
+<p>这里记一下我如何修锅。</p>]]>
+    </summary>
+    <title>解决从 Nixpkgs 26.05 安装 pipx 时 build 失败</title>
+    <updated>2026-10-07T05:05:02.265Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Xeniume</name>
+    </author>
+    <category term="Tech | 技术" scheme="https://blog.xeniu.me/categories/Tech-%E6%8A%80%E6%9C%AF/"/>
+    <category term="Just 4 Fun | 整活" scheme="https://blog.xeniu.me/categories/Tech-%E6%8A%80%E6%9C%AF/Just-4-Fun-%E6%95%B4%E6%B4%BB/"/>
+    <category term="Honkai: Star Rail" scheme="https://blog.xeniu.me/tags/Honkai-Star-Rail/"/>
+    <content>
+      <![CDATA[<h2 id="0x0-前言"><a class="header-anchor" href="#0x0-前言"></a>0x0. 前言</h2><p>上回说到，对你蝶爱得深沉的我，脸滚键盘 <a href="https://castorice.moe/">Castorice.Moe</a>。</p><p>什么？你不知道这是什么？自己多戳几次就知道了。</p><p>这可真是太有乐子了！「我也要搞一个！（星星眼）」</p><span id="more"></span><h2 id="0x1-让我康康"><a class="header-anchor" href="#0x1-让我康康"></a>0x1. 让我康康</h2><p>手玩一下：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">❯ curl -I https://castorice.moe/</span><br><span class="line">HTTP/2 303 </span><br><span class="line">date: ...</span><br><span class="line">location: https://www.youtube.com/watch?v=_Bt9UA354uo</span><br><span class="line">server: cloudflare</span><br><span class="line">...</span><br></pre></td></tr></table></figure><p>其中，<code>location</code> 字段不是恒定的，但其重定向至的页面都是你蝶的。上面留下来只是因为那刚好是你蝶 PV。</p><h2 id="0x2-启动！"><a class="header-anchor" href="#0x2-启动！"></a>0x2. 启动！</h2><p>先搞域名。虽然我也对你蝶爱得深沉，但域名已经被佬哥捷足先登了，咱换个别的——</p><p>就是你啦，「<a href="https://honkai-star-rail.fandom.com/wiki/Cyrene">昔涟 Cyrene</a>」！</p><p>咱身为老舰长（也不是那么老），就算上了泥头车，也是对爱莉有感情的。拿下 <code>cyrene.moe</code>。</p><hr><p>感觉写个 CF Worker 就可以搞定这些功能嘛。（只要没有某些唐人一直刷，Free plan 绝对够我发电了。）</p><p>维护一个 URL 集，每次请求就 randomly choose 一个元素，然后甩一个 303 回去。</p><h2 id="0x3-不启动"><a class="header-anchor" href="#0x3-不启动"></a>0x3. 不启动</h2><p><code>cyrene.moe</code> 已于 2026-05-01 过期。</p>]]>
+    </content>
+    <id>https://blog.xeniu.me/p/afaceb0f/</id>
+    <link href="https://blog.xeniu.me/p/afaceb0f/"/>
+    <published>2025-05-01T16:18:40.000Z</published>
+    <summary>
+      <![CDATA[<h2 id="0x0-前言"><a class="header-anchor" href="#0x0-前言"></a>0x0. 前言</h2>
+<p>上回说到，对你蝶爱得深沉的我，脸滚键盘 <a href="https://castorice.moe/">Castorice.Moe</a>。</p>
+<p>什么？你不知道这是什么？自己多戳几次就知道了。</p>
+<p>这可真是太有乐子了！「我也要搞一个！（星星眼）」</p>]]>
+    </summary>
+    <title>Moe of Cyrene</title>
+    <updated>2026-09-18T10:16:50.423Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Xeniume</name>
+    </author>
+    <category term="Tech | 技术" scheme="https://blog.xeniu.me/categories/Tech-%E6%8A%80%E6%9C%AF/"/>
+    <category term="Troubleshooting | 修锅" scheme="https://blog.xeniu.me/categories/Tech-%E6%8A%80%E6%9C%AF/Troubleshooting-%E4%BF%AE%E9%94%85/"/>
+    <category term="Ubuntu" scheme="https://blog.xeniu.me/tags/Ubuntu/"/>
+    <category term="webkit2gtk" scheme="https://blog.xeniu.me/tags/webkit2gtk/"/>
+    <content>
+      <![CDATA[<h2 id="0x0-前言"><a class="header-anchor" href="#0x0-前言"></a>0x0. 前言</h2><p>前几天在 Ubuntu 24.04 LTS 上安装 <a href="https://github.com/clash-verge-rev/clash-verge-rev/releases/tag/v1.7.5">Clash Verge Rev v1.7.5</a>（amd64）时，出现其依赖项 <code>libwebkit2gtk-4.0-37</code> 已弃用的错误。<br>这里记一下折腾过程。</p><span id="more"></span><h2 id="0x1-问题概括"><a class="header-anchor" href="#0x1-问题概括"></a>0x1. 问题概括</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">❯ <span class="built_in">sudo</span> apt install ./clash-verge_1.7.5_amd64.deb</span><br><span class="line">...</span><br><span class="line">下列软件包有未满足的依赖关系:</span><br><span class="line"> clash-verge : 依赖: libwebkit2gtk-4.0-37 但无法安装它</span><br><span class="line">...</span><br></pre></td></tr></table></figure><h2 id="0x2-解决方案"><a class="header-anchor" href="#0x2-解决方案"></a>0x2. 解决方案</h2><ul class="lvl-0"><li class="lvl-2"><p>官方解决方案，详见官方文档相应的 <a href="https://github.com/clash-verge-rev/clash-verge-rev.github.io/blob/842ea78dfce3395eede74d801cf97d17e455ca19/docs/faq/linux.md">FA♂Q</a> 页面。</p></li><li class="lvl-2"><p>我的解决方案（通过修改 apt 源）</p><p>编辑 <code>/etc/apt/sources.list.d/ubuntu.sources</code>，添加如下内容：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Types: deb</span><br><span class="line">URIs: http://br.archive.ubuntu.com/ubuntu/</span><br><span class="line">Suites: jammy noble-updates noble-backports</span><br><span class="line">Components: main restricted universe multiverse</span><br><span class="line">Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg</span><br><span class="line"></span><br><span class="line">Types: deb</span><br><span class="line">URIs: http://security.ubuntu.com/ubuntu/</span><br><span class="line">Suites: jammy-security</span><br><span class="line">Components: main restricted universe multiverse</span><br><span class="line">Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg</span><br></pre></td></tr></table></figure><p>然后该咋整就咋整：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update</span><br><span class="line"><span class="built_in">sudo</span> apt install libwebkit2gtk-4.0-37</span><br></pre></td></tr></table></figure></li></ul><h2 id="0x3-问题分析"><a class="header-anchor" href="#0x3-问题分析"></a>0x3. 问题分析</h2><p>问题主因，即为了向下兼容，Clash Verge Rev 的上游 <a href="https://github.com/tauri-apps/tauri">Tauri</a> 使用了 webkit2gtk 4.0，而 Ubuntu 24.04 LTS 的默认 apt 源中将其移除，转而包含 webkit2gtk 4.1。</p>]]>
+    </content>
+    <id>https://blog.xeniu.me/p/43e83f0/</id>
+    <link href="https://blog.xeniu.me/p/43e83f0/"/>
+    <published>2024-08-15T12:15:59.000Z</published>
+    <summary>
+      <![CDATA[<h2 id="0x0-前言"><a class="header-anchor" href="#0x0-前言"></a>0x0. 前言</h2>
+<p>前几天在 Ubuntu 24.04 LTS 上安装 <a href="https://github.com/clash-verge-rev/clash-verge-rev/releases/tag/v1.7.5">Clash Verge Rev v1.7.5</a>（amd64）时，出现其依赖项 <code>libwebkit2gtk-4.0-37</code> 已弃用的错误。<br>
+这里记一下折腾过程。</p>]]>
+    </summary>
+    <title>Ubuntu 24.04 LTS 安装 webkit2gtk 4.0</title>
+    <updated>2026-09-18T10:16:51.654Z</updated>
+  </entry>
+</feed>
